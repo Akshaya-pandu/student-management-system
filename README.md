@@ -8,6 +8,10 @@ A simple CRUD web application built using Flask and MySQL.
 - Delete Student
 - Update Student
 
+## Screenshots
+### Home Page
+![Home Page](screenshots/home-page.png)
+
 ## Technologies Used
 - Python
 - Flask
