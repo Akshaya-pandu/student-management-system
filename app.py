@@ -1,0 +1,48 @@
+# from flask import Flask, render_template
+
+# app = Flask(__name__)
+
+# @app.route('/')
+# def home():
+#     return render_template('index.html')
+
+# if __name__ == '__main__':
+#     app.run(debug=True)
+from flask import Flask, render_template, request
+import mysql.connector
+
+app = Flask(__name__)
+
+db = mysql.connector.connect(
+    host="localhost",
+    user="root",
+    password="root123",
+    database="studentdb"
+)
+
+cursor = db.cursor()
+
+@app.route('/', methods=['GET', 'POST'])
+def home():
+
+    if request.method == 'POST':
+
+        name = request.form['name']
+        age = request.form['age']
+        course = request.form['course']
+
+        query = "INSERT INTO students(name, age, course) VALUES(%s, %s, %s)"
+
+        values = (name, age, course)
+
+        cursor.execute(query, values)
+
+        db.commit()
+    cursor.execute("SELECT * FROM students")
+    students = cursor.fetchall()
+
+    return render_template('index.html',students=students)
+
+if __name__ == '__main__':
+    app.run(debug=True)
+
