@@ -8,7 +8,7 @@
 
 # if __name__ == '__main__':
 #     app.run(debug=True)
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request,redirect
 import mysql.connector
 
 app = Flask(__name__)
@@ -42,6 +42,16 @@ def home():
     students = cursor.fetchall()
 
     return render_template('index.html',students=students)
+@app.route('/delete/<int:id>')
+def delete_student(id):
+
+    query = "DELETE FROM students WHERE id = %s"
+
+    cursor.execute(query, (id,))
+
+    db.commit()
+
+    return redirect('/')
 
 if __name__ == '__main__':
     app.run(debug=True)
