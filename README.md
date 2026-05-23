@@ -4,9 +4,9 @@ A simple CRUD web application built using Flask and MySQL.
 
 ## Features
 - Add Student
-- View Students
-- Delete Student
-- Update Student
+- View Students Details
+- Delete Student Records
+
 
 ## Screenshots
 ### Home Page
