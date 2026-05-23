@@ -14,6 +14,8 @@ A simple CRUD web application built using Flask and MySQL.
 ## Screenshots
 ### Home Page
 ![Home Page](screenshots/home-page.png)
+![Home page](screenshots/homepage_css.png)
+![Home page](<screenshots/homepage_css (2).png>)
 
 ## Technologies Used
 - Python
@@ -28,24 +30,6 @@ A simple CRUD web application built using Flask and MySQL.
 1. Install Flask
 2. Configure MySQL database
 3. Run app.py
-
-## PROJECT Structure
-
-student-management-system/
-│
-├── app.py
-├── README.md
-│
-├── templates/
-│   ├── index.html
-│   └── update.html
-│
-├── static/
-│   └── style.css
-│
-├── screenshots/
-│   └── home-page.png
-
 
 ## Author
 Akshaya
