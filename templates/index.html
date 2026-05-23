@@ -2,6 +2,7 @@
 <html>
 <head>
     <title>Student Management System</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
 
@@ -38,7 +39,7 @@
         <a href="/update/{{ student[0] }}">
             <button>Edit</button>
         </a>
-        
+
         <a href="/delete/{{ student[0] }}">
             <button>Delete</button>
         </a>
